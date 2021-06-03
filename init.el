@@ -1,15 +1,18 @@
-;; disable tool bar
-(tool-bar-mode -1)
 
-;; disable menu bar
-(menu-bar-mode -1)
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'init-basic)
+(require 'init-package)
 
-;; disable scroll bar
-(scroll-bar-mode -1)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(use-package)))
 
-;; do not use backup file
-(setq make-backup-files nil)
-
-(require 'package)
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/") t)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Hack Nerd Font" :foundry "SRC" :slant normal :weight normal :height 99 :width normal)))))
