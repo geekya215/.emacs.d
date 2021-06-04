@@ -9,6 +9,7 @@
 (setq dashboard-set-heading-icons t)
 (setq dashboard-set-file-icons t)
 
+;; theme
 (use-package doom-themes
   :ensure t
   :config
@@ -26,5 +27,10 @@
   (doom-themes-treemacs-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
+
+;; modeline
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
 
 (provide 'init-ui)
