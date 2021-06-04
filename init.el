@@ -3,6 +3,7 @@
 (require 'init-basic)
 (require 'init-package)
 (require 'init-edit)
+(require 'init-ui)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
