@@ -4,6 +4,7 @@
 (require 'init-package)
 (require 'init-edit)
 (require 'init-ui)
+(require 'init-enhance)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
