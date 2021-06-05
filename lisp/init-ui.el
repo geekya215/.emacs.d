@@ -35,4 +35,7 @@
   (dashboard-set-init-info t)
   (dashboard-set-navigator t))
 
+(use-package org-bullets
+  :hook (org-mode . org-bullets-mode))
+
 (provide 'init-ui)
