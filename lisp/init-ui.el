@@ -1,36 +1,38 @@
-(use-package all-the-icons)
+(use-package doom-themes
+  :ensure t
+  :init
+  (load-theme 'doom-one t)
+  :config
+  (doom-themes-org-config))
+
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode)
+  :custom
+  (doom-modeline-irc nil)
+  (doom-modeline-mu4e nil)
+  (doom-modeline-gnus nil)
+  (doom-modeline-github nil)
+  (doom-modeline-persp-name nil)
+  (doom-modeline-unicode-fallback t)
+  (doom-modeline-enable-word-count nil))
+
+(use-package all-the-icons
+  :ensure t
+  :when (display-graphic-p)
+  :demand t)
 
 (use-package dashboard
   :ensure t
-  :config
-  (dashboard-setup-startup-hook))
-
-(setq dashboard-center-content t)
-(setq dashboard-set-heading-icons t)
-(setq dashboard-set-file-icons t)
-
-;; theme
-(use-package doom-themes
-  :ensure t
-  :config
-  ;; Global settings (defaults)
-  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-        doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-one t)
-
-  ;; Enable flashing mode-line on errors
-  (doom-themes-visual-bell-config)
-  ;; Enable custom neotree theme (all-the-icons must be installed!)
-  (doom-themes-neotree-config)
-  ;; or for treemacs users
-  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
-  (doom-themes-treemacs-config)
-  ;; Corrects (and improves) org-mode's native fontification.
-  (doom-themes-org-config))
-
-;; modeline
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1))
+  :hook ((after-init . dashboard-setup-startup-hook)
+         (dashboard-mode . (lambda ()
+                             (setq-local global-hl-line-mode nil))))
+  :custom
+  (dashboard-startup-banner 'logo)
+  (dashboard-center-content t)
+  (dashboard-set-heading-icons t)
+  (dashboard-set-file-icons t)
+  (dashboard-set-init-info t)
+  (dashboard-set-navigator t))
 
 (provide 'init-ui)

@@ -1,7 +1,8 @@
 (use-package which-key
   :ensure t
-  :config
-  (which-key-setup-minibuffer)
-  (which-key-mode))
+  :hook (after-init . which-key-mode)
+  :custom
+  (which-key-idle-delay 0.5)
+  (which-key-add-column-padding 1))
 
 (provide 'init-enhance)
