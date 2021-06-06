@@ -5,4 +5,8 @@
   (which-key-idle-delay 0.5)
   (which-key-add-column-padding 1))
 
+(use-package org-bullets
+  :ensure t
+  :hook (org-mode . org-bullets-mode))
+
 (provide 'init-enhance)
